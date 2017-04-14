@@ -300,6 +300,23 @@ Note that the order of elements in *$array* has no importance ; you could specif
 
 	$array	=  [ 1, 10, 4, 11, 3, 12, 20, 2, 21, 5 ] ;
 
+## $result = ToRangeString ( $array, $range_separator = '-', $item_separator = ', ' ) ; ##
+
+Converts an array of integers to a string representing ranges. The following for example :
+
+	$a =  [ 1, 3, 4, 2, 6, 22, 21, 20, 12  ] ;
+	echo ( ArrayHelpers::ToRangeString ( $a ) ) ;
+
+will display :
+
+	1-4, 6, 12, 20-22
+
+The parameters are the following :
+
+- **$array** *(array)* :  Array to be converted to a range list then to its string representation.
+- **$range_separator** *(array)* : tring to be used as a separator between the lower and upper limits of a range. Note that the separator will not be used if the lower and upper limits are equal (only one value will be inserted into the return value).
+- **item_separator** *(string)* : Separator string to be used between two ranges.
+
 ## ArrayHelper::Utf8Encode ( &$array ) ; ArrayHelper::Utf8Decode ( &$array ) ; ##
 
 Recursively encodes/decodes an array. Decoded data is put in the supplied *$array* argument.
